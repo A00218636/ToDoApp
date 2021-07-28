@@ -6,16 +6,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ToDoApplication.Data;
+using ToDoApplication.Data.Context;
 
 namespace ToDoApplication.Pages
 {
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        private readonly ToDoContext _toDoContext;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, ToDoContext context)
         {
             _logger = logger;
+            _toDoContext = context;
         }
 
 
