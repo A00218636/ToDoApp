@@ -1,0 +1,49 @@
+﻿@model List<ToDoApplication.Data.ToDoItem>
+
+<table id="myTable" class="table" cellspacing="0">
+    <thead>
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <form method="get">
+        <fieldset>
+            <legend>Add Item</legend>
+            <div>
+                <label for="Description">Name:</label>
+                <input type="text" name="Description" value="" />
+            </div>
+            <div>
+                <label for="Done">Done:</label>
+                <input type="text" name="Done" value="" />
+            </div>
+
+            <div>
+                <label for="EntryDate">Entry Date:</label>
+                <input type="text" name="EntryDate" value="" />
+            </div>
+
+            <input id="Submit1" type="submit" value="submit" />
+        </fieldset>
+    </form>
+</div>
