@@ -14,6 +14,9 @@ namespace ToDoApplication.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly ToDoContext _toDoContext;
+        [FromForm]
+        public ToDoItem ToDoItem = new ToDoItem() { ID = "1", Description = "assignment", Done = true };
+
 
         public IndexModel(ILogger<IndexModel> logger, ToDoContext context)
         {
@@ -25,12 +28,11 @@ namespace ToDoApplication.Pages
                public void OnGet()
         {
 
-            List<ToDoItem> ls = new List<ToDoItem>() {
-                new ToDoItem(){ ID= "1", Description="Bill"},
-                new ToDoItem(){ ID= "2", Description="hohn"},
-            };
+                 ToDoItem = _toDoContext.ToDoItems
+                .Where(c => c.Done == true)
+                .FirstOrDefault();
 
-           
+
         }
     }
 }

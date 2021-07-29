@@ -14,6 +14,8 @@ namespace ToDoApplication.Data
         public string Description { get; set; }
         public Boolean Done { get; set; }
         public DateTime EntryDate { get; set; }
-       
+        public List<ToDoItem> itemList = new List<ToDoItem>();
+
+
     }
 }

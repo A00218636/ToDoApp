@@ -1,12 +1,13 @@
-﻿@model List<ToDoApplication.Data.ToDoItem>
+﻿@model IEnumerable<ToDoApplication.Data.ToDoItem>
 
 <table id="myTable" class="table" cellspacing="0">
     <thead>
         <tr>
             <th>
-                
+                ID
             </th>
             <th>
+                Description
             </th>
         </tr>
     </thead>
@@ -24,6 +25,7 @@
         }
     </tbody>
 </table>
+
 
 <div>
     <form method="get">
