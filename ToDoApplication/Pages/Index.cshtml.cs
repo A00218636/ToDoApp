@@ -14,7 +14,7 @@ namespace ToDoApplication.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly ToDoContext _toDoContext;
-        [FromForm]
+       
         public ToDoItem ToDoItem = new ToDoItem() { ID = "1", Description = "assignment", Done = true };
 
 
